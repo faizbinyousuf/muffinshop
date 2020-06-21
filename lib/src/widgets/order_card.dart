@@ -39,7 +39,7 @@ class OrderCard extends StatelessWidget {
                   Text('Black Forest',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   // SizedBox(height: 7.0),
-                  Text('600.00',
+                  Text('\u20b9 600.00',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.grey[700],
