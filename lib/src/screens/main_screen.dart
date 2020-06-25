@@ -1,3 +1,6 @@
+import 'package:MuffinShop/src/scoped-model/main_model.dart';
+
+import '../scoped-model/food_model.dart';
 import 'package:flutter/material.dart';
 import '../pages/home_page.dart';
 import '../pages/order_page.dart';
@@ -5,14 +8,17 @@ import '../pages/favorite_page.dart';
 import '../pages/profile_page.dart';
 
 class MainScreen extends StatefulWidget {
-  final String title;
-  MainScreen({this.title});
+  //final FoodModel foodModel;
+  final MainModel model;
+  //inal String title;
+
+  MainScreen({this.model});
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
-  String _title;
+  String _title = '';
   int currentTabIndex = 0;
 
   List<Widget> pages;
@@ -24,8 +30,10 @@ class _MainScreenState extends State<MainScreen> {
   ProfilePage profilePage;
 
   void initState() {
-    super.initState();
-    _title = 'title';
+    //call fetch method from food scoped model
+    // widget.foodModel.fetchFoods();
+    // widget.foodModel;
+    widget.model.fetchFoods();
     homePage = HomePage();
     orderPage = OrderPage();
     favoritePage = FavoritePage();
@@ -33,12 +41,14 @@ class _MainScreenState extends State<MainScreen> {
     pages = [homePage, orderPage, favoritePage, profilePage];
 
     currentPage = homePage;
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(

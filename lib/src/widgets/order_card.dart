@@ -1,6 +1,5 @@
 import 'package:MuffinShop/src/models/food_model.dart';
 import 'package:flutter/material.dart';
-import '../data/food_data.dart';
 
 class OrderCard extends StatelessWidget {
   final foods = Food();

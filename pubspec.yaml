@@ -29,7 +29,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   http: ^0.12.1
   dio: ^3.0.9
-
+  scoped_model: ^1.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,3 +70,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# analyzer:
+#   strong-mode: true
+#   language:
+#     enableSuperMixins: true
+
+analyzer:
+  strong-mode: true
+  language:
+    enableSuperMixins: true
